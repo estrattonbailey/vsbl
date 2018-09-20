@@ -1,0 +1,34 @@
+{
+  "name": "vsbl",
+  "version": "0.0.1",
+  "description": "In-viewport detection without event listeners.",
+  "source": "index.js",
+  "module": "dist/vsbl.es.js",
+  "jsnext:main": "dist/vsbl.es.js",
+  "main": "dist/vsbl.js",
+  "umd:main": "dist/vsbl.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle build",
+    "watch": "microbundle watch --compress false",
+    "publish": "npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/vsbl.git"
+  },
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/vsbl/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/vsbl#readme",
+  "devDependencies": {
+    "microbundle": "^0.4.4"
+  },
+  "dependencies": {
+    "srraf": "^3.0.0"
+  }
+}
