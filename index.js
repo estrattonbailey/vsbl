@@ -2,6 +2,8 @@ import srraf from 'srraf'
 
 export default function vsbl (node) {
   return function handlers (enter, exit) {
+    let visible = false
+
     return srraf((...args) => {
       const [ { y, vh }, timestamp ] = args
 
@@ -11,13 +13,11 @@ export default function vsbl (node) {
 
       const iv = nodeBot >= y && nodeTop <= (y + vh)
 
-      let vsbl = false
-
-      if (iv && !vsbl) {
-        vsbl = true
+      if (iv && !visible) {
+        visible = true
         enter && enter(...args)
-      } else if (!iv && vsbl) {
-        vsbl = false
+      } else if (!iv && visible) {
+        visible = false
         exit && exit(...args)
       }
     })
