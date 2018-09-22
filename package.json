@@ -1,6 +1,6 @@
 {
   "name": "vsbl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "In-viewport detection without event listeners.",
   "source": "index.js",
   "module": "dist/vsbl.es.js",
