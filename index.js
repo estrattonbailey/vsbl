@@ -4,15 +4,17 @@ export default function vsbl (node, opts = {}) {
   return function handlers (enter, exit) {
     let visible = false
 
+    const threshold = parseFloat(node.getAttribute('data-vsbl') || opts.threshold || 0)
+
     return srraf((...args) => {
       const [ { y, vh }, timestamp ] = args
 
       const bounds = node.getBoundingClientRect()
       const nodeTop = bounds.top + y
       const nodeBot = nodeTop + bounds.height
-      const threshold = (opts.threshold || 0) * bounds.height
+      const offset = threshold * bounds.height
 
-      const iv = nodeBot - threshold >= y && nodeTop + threshold <= y + vh
+      const iv = nodeBot - offset >= y && nodeTop + offset <= y + vh
 
       if (iv && !visible) {
         visible = true

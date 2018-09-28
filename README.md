@@ -28,5 +28,10 @@ Below, 50% of the element must be visible before `enter` is fired.
 const listener = vsbl(node, { threshold: 0.5 })(() => console.log('visible'))
 ```
 
+You can optionally include this threshold as an attribute on the element itself:
+```html
+<div id='scroll' data-vsbl='0.5'></div>
+```
+
 ## License
 MIT License © [Eric Bailey](https://estrattonbailey.com)
