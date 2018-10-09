@@ -20,17 +20,17 @@ listener() // destroy
 
 ## Options
 ### `threshold`
-Specify a percentage of the tracked element that needs to be visible in order to
-trigger `enter`, and vice versa for `exit`.
+Trigger visibility sooner or later than usual.
+- Values below `0.5` will be treated as a percentage of the viewport
+- Values of `0.5` and over will be considered pixel values
 
-Below, 50% of the element must be visible before `enter` is fired.
 ```javascript
-const listener = vsbl(node, { threshold: 0.5 })(() => console.log('visible'))
+const listener = vsbl(node, { threshold: 0.25 })(() => console.log('visible'))
 ```
 
 You can optionally include this threshold as an attribute on the element itself:
 ```html
-<div id='scroll' data-vsbl='0.5'></div>
+<div id='scroll' data-vsbl='0.25'></div>
 ```
 
 ## License
