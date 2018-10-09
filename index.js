@@ -4,7 +4,7 @@ export default function vsbl (node, opts = {}) {
   return function handlers (enter, exit) {
     let visible = false
 
-    const threshold = parseFloat(node.getAttribute('data-vsbl') || opts.threshold || 0)
+    const threshold = parseFloat(node.getAttribute('data-threshold') || opts.threshold || 0)
 
     return srraf((...args) => {
       const [ { y, vh }, timestamp ] = args

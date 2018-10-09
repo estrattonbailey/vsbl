@@ -30,7 +30,7 @@ const listener = vsbl(node, { threshold: 0.25 })(() => console.log('visible'))
 
 You can optionally include this threshold as an attribute on the element itself:
 ```html
-<div id='scroll' data-vsbl='0.25'></div>
+<div id='scroll' data-threshold='0.25'></div>
 ```
 
 ## License
